@@ -1,0 +1,81 @@
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.about-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.about-socials {
+    margin-top: 20px;
+}
+
+.about-socials-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.social-link.github {
+    background-color: #24292e;
+}
+
+.social-link.twitter {
+    background-color: #1da1f2;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-link i {
+    margin-right: 10px;
+}
+
+.social-link span {
+    font-weight: bold;
+}
