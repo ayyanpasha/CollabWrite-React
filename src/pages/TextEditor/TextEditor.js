@@ -102,7 +102,7 @@ export default function TextEditor() {
     }, [socket, quill, documentId]);
 
     useEffect(() => {
-        const s = io("http://192.168.29.62:3001");
+        const s = io(process.env.REACT_APP_WEBSOCKET);
         setSocket(s);
 
         return () => {
