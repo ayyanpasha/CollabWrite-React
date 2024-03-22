@@ -110,6 +110,7 @@ export default function TextEditor() {
         };
     }, []);
 
+
     useEffect(() => {
         if (socket == null || quill == null) return;
         const handler = (delta) => {
