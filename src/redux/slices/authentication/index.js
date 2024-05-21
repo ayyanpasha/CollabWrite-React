@@ -16,7 +16,7 @@ export const login = createAsyncThunk("authentication/login", async (credentials
         }
 
         if (data.authToken) {
-            localStorage.setItem('auth-token', data.authToken);
+            localStorage.setItem('Authorization', data.authToken);
         }
 
         return data;
@@ -42,7 +42,7 @@ export const signup = createAsyncThunk("authentication/signup", async (credentia
         }
 
         if (data.authToken) {
-            localStorage.setItem('auth-token', data.authToken);
+            localStorage.setItem('Authorization', data.authToken);
         }
 
         return data;
@@ -54,12 +54,12 @@ export const signup = createAsyncThunk("authentication/signup", async (credentia
 
 export const getUser = createAsyncThunk("authentication/getUser", async (credentials, thunkAPI) => {
     try {
-        if (!localStorage.getItem('auth-token')) {
+        if (!localStorage.getItem('Authorization')) {
             throw new Error("Login Required");
         }
         const headers = {
             'Content-Type': 'application/json',
-            'auth-token': localStorage.getItem('auth-token')
+            'Authorization': localStorage.getItem('Authorization')
         };
 
         const response = await fetch(`${process.env.REACT_APP_API}/api/auth`, {
@@ -78,7 +78,7 @@ export const getUser = createAsyncThunk("authentication/getUser", async (credent
 });
 
 export const logout = createAsyncThunk("authentication/logout", async () => {
-    localStorage.removeItem('auth-token');
+    localStorage.removeItem('Authorization');
 })
 
 

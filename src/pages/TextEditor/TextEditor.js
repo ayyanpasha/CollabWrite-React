@@ -57,7 +57,7 @@ export default function TextEditor() {
         try {
             const headers = {
                 "Content-Type": "application/json",
-                "auth-token": localStorage.getItem("auth-token"),
+                "Authorization": localStorage.getItem("Authorization"),
             };
             const body = {
                 title: newTitle
@@ -98,7 +98,7 @@ export default function TextEditor() {
         socket.once("load-document", (document) => {
             quill.setContents(document);
         });
-        socket.emit("get-document", { userId: localStorage.getItem('auth-token'), documentId });
+        socket.emit("get-document", { userId: localStorage.getItem('Authorization'), documentId });
     }, [socket, quill, documentId]);
 
     useEffect(() => {
@@ -144,7 +144,7 @@ export default function TextEditor() {
         try {
             const headers = {
                 "Content-Type": "application/json",
-                "auth-token": localStorage.getItem("auth-token"),
+                "Authorization": localStorage.getItem("Authorization"),
             };
 
             const response = await fetch(

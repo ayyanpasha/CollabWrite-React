@@ -3,7 +3,7 @@ export const showUsers = async (documentId, setUsers) => {
     try {
         const headers = {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
+            "Authorization": localStorage.getItem("Authorization"),
         };
 
         const response = await fetch(
@@ -29,7 +29,7 @@ export const showRequestUsers = async (documentId, setRequestUsers) => {
     try {
         const headers = {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
+            "Authorization": localStorage.getItem("Authorization"),
         };
 
         const response = await fetch(
@@ -55,7 +55,7 @@ export const changeAccess = async (documentId, selectedOption) => {
     try {
         const headers = {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
+            "Authorization": localStorage.getItem("Authorization"),
         };
         const response = await fetch(
             `${process.env.REACT_APP_API}/api/document/access/id/${documentId}`,
@@ -79,7 +79,7 @@ export const requestWriteAccess = async (documentId) => {
     try {
         const headers = {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
+            "Authorization": localStorage.getItem("Authorization"),
         };
 
         const response = await fetch(
@@ -104,7 +104,7 @@ export const giveAccess = async (requestId) => {
     try {
         const headers = {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
+            "Authorization": localStorage.getItem("Authorization"),
         };
 
         const response = await fetch(
@@ -128,7 +128,7 @@ export const changePermission = async (selectedOption, permissionId) => {
     try {
         const headers = {
             "Content-Type": "application/json",
-            "auth-token": localStorage.getItem("auth-token"),
+            "Authorization": localStorage.getItem("Authorization"),
         };
 
         const response = await fetch(

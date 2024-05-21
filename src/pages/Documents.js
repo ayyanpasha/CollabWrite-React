@@ -14,7 +14,7 @@ export default function Documents() {
         try {
             const headers = {
                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('auth-token')
+                'Authorization': localStorage.getItem('Authorization')
             };
 
             const response = await fetch(`${process.env.REACT_APP_API}/api/document/new`, {
@@ -35,7 +35,7 @@ export default function Documents() {
             if (window.confirm(`Confirm Deleting document ${documentId}`)) {
                 const headers = {
                     'Content-Type': 'application/json',
-                    'auth-token': localStorage.getItem('auth-token')
+                    'Authorization': localStorage.getItem('Authorization')
                 };
 
                 const response = await fetch(`${process.env.REACT_APP_API}/api/document/id/${documentId}`, {
@@ -59,7 +59,7 @@ export default function Documents() {
             try {
                 const headers = {
                     'Content-Type': 'application/json',
-                    'auth-token': localStorage.getItem('auth-token')
+                    'Authorization': localStorage.getItem('Authorization')
                 };
 
                 const response = await fetch(`${process.env.REACT_APP_API}/api/document/list`, {
